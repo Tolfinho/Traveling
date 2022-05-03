@@ -427,3 +427,9 @@ footer .socials .icon:hover {
         transform: scale(1);
     }
 }
+
+@media(max-width: 900px){
+    * {
+        font-size: 40px!important;
+    }
+}
