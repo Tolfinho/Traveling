@@ -230,6 +230,7 @@ body, html {
 
 .tip h1 {
     font-size: 80px;
+    transition: all 0.4s ease;
 }
 
 .tip button {
@@ -428,8 +429,63 @@ footer .socials .icon:hover {
     }
 }
 
-@media(max-width: 900px){
-    * {
-        font-size: 40px!important;
+@media(max-width: 1280px){
+   .banner .content h1,
+   .banner .content h2 {
+       font-size: 3.5em;
+   }
+
+   .banner .content a {
+       font-size: 1.3em;
+   }
+
+   .tip h1 {
+       font-size: 3em;
+   }
+
+   .tip button {
+       font-size: 1.4em;
+   }
+}
+
+@media(max-width: 720px){
+    body {
+        scrollbar-width: 0px;
+    }
+
+    .reward .popup {
+        width: 90%;
+    }
+
+    .reward .popup img {
+        width: 100px;
+        margin-top: -30px;
+    }
+
+    .reward .popup h3 {
+        font-size: 1.4em;
+    }
+
+    .reward .popup p {
+        font-size: 1em;
+    }
+
+    .reward .popup a {
+        font-size: 1.2em;
+    }
+
+    footer {
+        display: block;
+    }
+
+    footer .copy {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    footer .socials {
+        padding-left: 36%;
     }
 }
