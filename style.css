@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body, html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.active {
+    display: flex!important;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+/* HEADER */
+.banner header {
+    width: 95%;
+    height: 50px;
+    margin: 0 auto;
+    color: blue;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.banner header .left .logo {
+    width: 170px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.banner header .left .logo:hover {
+    transform: scale(1.1);
+}
+
+.banner header .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner header .right .menu-icon {
+    font-size: 45px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+.banner header .right .bgToggle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 30px; 
+    cursor: pointer;
+    display: none;
+}
+
+.banner header .right .play {
+    display: none;
+}
+
+.banner header .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: menu ease 0.3s;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(12px);
+}
+
+.banner header .menu .menuClose {
+    position: absolute;
+    top: 20px;
+    right: 2.5%;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease; 
+}
+
+.banner header .menu .menuClose:hover {
+    color: orangered;
+}
+
+.banner header .menu ul li {
+    list-style: none;
+    text-align: center;
+}
+
+.banner header .menu ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 3.8em;
+    line-height: 1.4em;
+    transition: all 0.3s ease;
+}
+
+.banner header .menu ul li a:hover {
+    color: orangered;
+}
+
+.banner header .menu .active {
+    animation-duration: 0.4s;
+}
+
+.banner .video-container {
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: absolute;
+}
+
+.banner .video-container video {
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner .content {
+    display: block;
+    z-index: 10;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.banner .content h1,
+.banner .content h2 {
+    opacity: 0;
+    font-size: 4.7em;
+    font-weight: 900;
+    transition: 1s;
+}
+
+.banner .content h1 {
+    animation: showUp ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.banner .content h2 {
+    animation: showUp ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+.banner .content h1 span,
+.banner .content h2 span {
+    color: orangered;
+    cursor: pointer;
+}
+
+.banner .content a {
+    opacity: 0;
+    background: orangered;
+    padding: 16px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 100px;
+    font-size: 22px;
+    font-weight: 500;
+    display: block;
+    width: 200px;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid orangered;
+    animation: showUp ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+.banner .content a:hover {
+    background: transparent;
+    color: orangered;
+    transition: 0.3s;
+}
+
+.banner .arrow-down {
+    width: 100%;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    z-index: 100;
+    animation-name: arrow-down;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.banner .arrow-down .icon {
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: orangered;
+    opacity: 0.3;
+}
+
+.tip {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.tip h1 {
+    font-size: 80px;
+}
+
+.tip button {
+    background: orangered;
+    color: rgba(255, 255, 255, 0.8);
+    width: 240px;
+    padding: 20px 0;
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px 1px rgba(255, 69, 0, 0.4);
+    animation: shrink ease 3s infinite;
+}
+
+.tip button:hover {
+    box-shadow: 0px 0px 20px 4px rgba(255, 69, 0, 0.4);
+    transform: scale(1.07);
+    animation-play-state: paused;
+}
+
+.reward {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-indeX: 500;
+}
+
+.reward .popup {
+    width: 460px;
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    position: relative;
+    animation: grow ease 0.6s;
+}
+
+.reward .popup img {
+    width: 150px;
+    /* transform: translateY(-50%); */
+    margin-top: -60px;
+    margin-bottom: 25px;
+}
+
+.reward .popup h3 {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reward .popup p {
+    font-size: 19px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reward .popup span {
+    color: orangered;
+    font-weight: 900;
+}
+
+.reward .popup a {
+    background: orangered;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    width: 200px;
+    padding: 14px 0;
+    text-align: center;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.reward .popup a:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 25px 10px rgba(255, 69, 0, 0.6);
+}
+
+.reward .popup .rewardClose {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 35px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reward .popup .rewardClose:hover {
+    color: orangered;
+}
+
+footer {
+    width: 100%;
+    height: 80px;
+    background: black;
+    border-top: 1px solid rgba(255, 255, 255, 0.01);
+    padding: 0 10%;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .socials {
+    display: flex;
+    gap: 30px;
+}
+
+footer .socials .icon {
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+footer .socials .icon:hover {
+    transform: scale(1.1) translateY(-2px);
+    color: orangered;
+}
+
+@keyframes showUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes menu {
+    0% {
+        width: 0%;
+        height: 0vh;
+    }
+
+    100% {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+@keyframes arrow-down {
+    0% {
+        transform: translateY(-15px);
+    }
+
+    50% {
+        transform: translateY(25px);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

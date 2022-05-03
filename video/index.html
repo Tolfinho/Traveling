@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <title>Video Banner</title>
+</head>
+<body>
+
+    <div class="banner">
+        <header>
+            <div class="left">
+                <img onClick="alert('Não é aqui!!!')" class="logo" src="img/logo.png" alt="">
+            </div>
+            <div class="right">
+                <ion-icon class="bgToggle pause active" name="pause-circle-outline"></ion-icon>
+                <ion-icon class="bgToggle play" name="play-circle-outline"></ion-icon>
+                <ion-icon class="menu-icon" name="menu-outline"></ion-icon>
+            </div>
+            <div class="menu">
+                <ion-icon class="menuClose" name="close-outline"></ion-icon>
+                <ul>
+                    <li><a onClick="alert('Não é aqui!!!')" href="">Home</a></li>
+                    <li><a onClick="alert('Não é aqui!!!')" href="">About</a></li>
+                    <li><a onClick="alert('Não é aqui!!!')" href="">Services</a></li>
+                    <li><a onClick="alert('Não é aqui!!!')" href="">Blog</a></li>
+                    <li><a onClick="alert('Não é aqui!!!')" href="">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="video-container">
+            <video class="video" src="video/nature-bg.mp4" autoplay muted loop></video>
+        </div>
+        <div class="content">
+            <h1>Find your <span onClick="alert('Não é aqui!!!')">limits</span></h1>
+            <h2>Discover the <span onClick="alert('Não é aqui!!!')">future</span>.</h1>
+            <a href="#scroll">Learn More</a>
+        </div>
+        <div class="arrow-down">
+            <a href="#scroll"><ion-icon class="icon" name="chevron-down-outline"></ion-icon></a>
+        </div>
+    </div>
+
+    <section class="tip" id="scroll">
+        <h1>Clique ABAIXO e<br>obtenha a sua dica</h1>
+        <button onClick="alert('Procure um local clicável no site para encontrar o seu Easter Egg e receber sua recompensa!!!')">DICA!!!</button>
+    </section>
+
+    <div class="reward">
+        <div class="popup">
+            <ion-icon class="rewardClose" name="close-outline"></ion-icon>
+            <img src="img/cup.png" alt="">
+            <h3>PARABÉNS, <br>VOCÊ GANHOU!</h3>
+            <p>Você encontrou o tesouro escondido. A sua recompensa é um vale ilimitado de <span>beijos</span> e <span>carinhos</span>. Para regatar a sua recompensa basta clicar no botão abaixo!</p>
+            <a href="https://api.whatsapp.com/send?phone=5551997562920&text=Ol%C3%A1%2C%20gostaria%20do%20meu%20pr%C3%AAmio!%F0%9F%98%8B%F0%9F%98%8B" target="_blank">Resgatar</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copy">&copy;2022 Copyright | Developed by <span class="ee">João Tolfo</span></div>
+        <div class="socials">
+            <ion-icon onClick="alert('Não é aqui!!!')" class="icon" name="logo-whatsapp"></ion-icon>
+            <ion-icon onClick="alert('Não é aqui!!!')" class="icon" name="logo-instagram"></ion-icon>
+            <ion-icon onClick="alert('Não é aqui!!!')" class="icon" name="logo-facebook"></ion-icon>
+        </div>
+    </footer>
+
+    <script>
+
+        const menu = document.querySelector(".menu")
+        const menuIcon = document.querySelector(".menu-icon")
+        const closeIcon = document.querySelector(".menuClose")
+        const ee = document.querySelector(".ee")
+        const reward = document.querySelector(".reward")
+        const rewardClose = document.querySelector(".rewardClose")
+
+        const video = document.querySelector(".video")
+        const play = document.querySelector(".play")
+        const pause = document.querySelector(".pause")
+
+        menuIcon.addEventListener("click", (e) => {
+            menu.classList.toggle("active")
+        })
+        closeIcon.addEventListener("click", (e) => {
+            menu.classList.toggle("active")
+        })
+        ee.addEventListener("click", (e) => {
+            reward.classList.toggle("active")
+        })
+        rewardClose.addEventListener("click", (e) => {
+            reward.classList.toggle("active")
+        })
+
+        pause.addEventListener("click", (e) => {
+            video.pause()
+            pause.classList.toggle("active")
+            play.classList.toggle("active")
+        })
+
+        play.addEventListener(  "click", (e) => {
+            video.play()
+            pause.classList.toggle("active")
+            play.classList.toggle("active")
+        })
+
+    </script>
+    
+</body>
+</html>
